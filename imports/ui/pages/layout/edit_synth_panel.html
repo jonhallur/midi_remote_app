@@ -1,0 +1,32 @@
+<template name="edit_synth_panel">
+    <form>
+        <h3>{{panel_name}} of <a href="{{pathFor 'edit.proto' proto_id=proto._id}}">{{proto.name}}</a></h3>
+        <div class="form-group">
+            <label for="controller_type_selector">Controller Type</label>
+            <select id="controller_type_selector">
+                {{#each controllerTypes}}
+                    <option value="{{identifier}}">{{name}}</option>
+                {{/each}}
+            </select>
+            {{> Template.dynamic template=selectedControllerType}}
+        </div>
+    </form>
+    <div>
+        <ul>
+            {{#each panel_items}}
+                {{> panel_item}}
+            {{/each}}
+        </ul>
+
+    </div>
+</template>
+
+<template name="panel_item">
+    <li id="{{this}}">
+        <a href="#" class="edit_parameter"><span class="glyphicon glyphicon-edit" aria-hidden="true"></span></a>
+        <a href="#" class="delete_parameter"><span class="glyphicon glyphicon-remove-circle" aria-hidden="true"></span></a>
+        <a href="#" class="move_parameter_up"><span class="glyphicon glyphicon-arrow-up" aria-hidden="true"></span></a>
+        <a href="#" class="move_parameter_down"><span class="glyphicon glyphicon-arrow-down" aria-hidden="true"></span></a>
+        - {{actual_item.parameter_number}} - {{actual_item.name}}
+    </li>
+</template>

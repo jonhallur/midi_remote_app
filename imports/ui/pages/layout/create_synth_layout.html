@@ -1,0 +1,23 @@
+<template name="create_synth_layout">
+    <div class="form-group">
+        <form class="new-synth">
+            <h3>Create new Synth Layout</h3>
+            <div class="form-group">
+                <input class="form-control" type="text" id="synth_name" placeholder="Synth name" />
+            </div>
+
+            <div class="form-group">
+                <label for="sysexheader_selector">SysExHeader</label>
+                <select id="sysexheader_selector">
+                    {{#each sysexheaders}}
+                        <option value="{{_id}}">{{manufacturer_name}} - {{model}}</option>
+                    {{/each}}
+                </select>
+            </div>
+            <div class="form-group">
+                <button class="btn btn-primary" id="add_synth">Create Synth Layout</button>
+            </div>
+        </form>
+        {{> list_synth_prototypes}}
+    </div>
+</template>

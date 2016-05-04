@@ -1,4 +1,4 @@
-import '../imports/api/synths.js'
+import '../imports/api/collections.js'
 
 
 

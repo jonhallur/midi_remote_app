@@ -1,0 +1,30 @@
+<template name="new_sysexheader">
+    <div class="form-group">
+        <form class="new-sysexheader">
+            <h3>Create new SysEx Header</h3>
+            <div class="form-group">
+                <label for="manufacturer_selector">Manufacturer</label>
+                <select id="manufacturer_selector">
+                    {{#each manufacturers}}
+                        <option value="{{manufacturer_id}}">{{name}}</option>
+                    {{/each}}
+                </select>
+            </div>
+            <div class="form-group">
+                <input class="form-control" type="text" name="model_name" placeholder="Model name" />
+            </div>
+            <div class="form-group">
+                <input class="form-control" type="text" name="before_channel" placeholder="Comma separated Before channel SysEx list" />
+            </div>
+            <div class="form-group">
+                <input class="form-control" type="text" name="after_channel" placeholder="Comma separated After channel SysEx list" />
+            </div>
+            <div class="form-group">
+                <input class="form-control" type="number" name="channel_mod" placeholder="Channel modifier" />
+            </div>
+            <div class="form-group">
+                <button class="btn btn-primary" id="create_new_sysexheader">Add SysExHeader</button>
+            </div>
+        </form>
+    </div>
+</template>

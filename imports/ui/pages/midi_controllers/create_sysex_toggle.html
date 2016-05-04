@@ -1,0 +1,30 @@
+<template name="create_sysex_toggle">
+    <div class="form-group">
+        <form>
+            <h3>SysEx Toggle</h3>
+            <div class="form-group">
+                <input id="sysex_toggle_name" class="form-control" type="text" placeholder="Name" />
+            </div>
+            <div class="form-group">
+                <div class="checkbox">
+                    <label for="sysex_toggle_default_value">
+                        <input id="sysex_toggle_default_value" type="checkbox" />
+                        Default True
+                    </label>
+                </div>
+            </div>
+            <div class="form-group">
+                <input id="sysex_toggle_parameter_number" class="form-control" type="number" placeholder="Parameter #" />
+            </div>
+            <div class="form-group">
+                <input id="sysex_toggle_true_value" class="form-control" type="number" placeholder="Value for True state" />
+            </div>
+            <div class="form-group">
+                <input id="sysex_toggle_false_value" class="form-control" type="number" placeholder="Value for False state" />
+            </div>
+            <div class="form-group">
+                <button id="create_new_sysex_toggle_btn" class="btn btn-primary">Create SysEx Toggle</button>
+            </div>
+        </form>
+    </div>
+</template>

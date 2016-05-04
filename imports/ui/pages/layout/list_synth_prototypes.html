@@ -1,0 +1,39 @@
+<template name="list_synth_prototypes">
+    <table class="table table-hover table-condensed table-bordered">
+        <thead>
+        <tr>
+            <th>Edit</th>
+            <th>Name</th>
+            <th># Items</th>
+        </tr>
+        </thead>
+        <tbody>
+        {{#each synths}}
+            <tr>
+                {{> synth}}
+            </tr>
+        {{/each}}
+        </tbody>
+    </table>
+</template>
+
+<template name="synth">
+    <td>
+        <div class="dropdown">
+            <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                Menu
+                <span class="caret"></span>
+            </button>
+            <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+                <li>
+                    <a href="#" id="{{_id}}" class="remove_synth">Remove</a>
+                </li>
+                <li>
+                    <a href="#" id="{{_id}}" class="edit_synth">Edit</a>
+                </li>
+            </ul>
+        </div>
+    </td>
+    <td><a href="{{pathFor '/proto/:id/control' id=_id}}">{{name}}</a></td>
+    <td>{{num_parameters}}</td>
+</template>

@@ -1,0 +1,57 @@
+<template name="midi">
+    <div class="container">
+        <div class="btn-toolbar">
+            <div class="btn-group">
+                <button class="btn btn-default dropdown-toggle" type="button" id="midiOutDropDownMenu" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                    Device Output
+                    <span class="caret"></span>
+                </button>
+                <ul class="dropdown-menu" aria-labelledby="midiOutDropDownMenu">
+                    {{#each midi_outputs}}
+                        <li id="{{id}}"><a class="midi-output" href="#">{{name}}</a></li>
+                    {{/each}}
+                </ul>
+            </div>
+            <div class="btn-group">
+                <button class="btn btn-default dropdown-toggle" type="button" id="midiInDropDownMenu" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                    Device Input
+                    <span class="caret"></span>
+                </button>
+                <ul class="dropdown-menu" aria-labelledby="midiInDropDownMenu">
+                    {{#each midi_inputs}}
+                        <li id="{{id}}"><a class="midi-input" href="#">{{name}}</a></li>
+                    {{/each}}
+                </ul>
+            </div>
+            <div class="btn-group">
+                <button class="btn btn-default dropdown-toggle" type="button" id="midiSeqOutDropDownMenu" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                    Seq Out
+                    <span class="caret"></span>
+                </button>
+                <ul class="dropdown-menu" aria-labelledby="midiThruDropDownMenu">
+                    {{#each midi_outputs}}
+                        <li id="{{id}}"><a class="midi-seq-output" href="#">{{name}}</a></li>
+                    {{/each}}
+                </ul>
+            </div>
+            <div class="btn-group">
+                <button class="btn btn-default dropdown-toggle" type="button" id="midiSeqInDropDownMenu" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                    Seq In
+                    <span class="caret"></span>
+                </button>
+                <ul class="dropdown-menu" aria-labelledby="midiSeqInDropDownMenu">
+                    {{#each midi_inputs}}
+                        <li id="{{id}}"><a class="midi-seq-input" href="#">{{name}}</a></li>
+                    {{/each}}
+                </ul>
+            </div>
+            Output: {{selected_midi_output_name}}
+            Input: {{selected_midi_input_name}}
+            Seq Out: {{selected_midi_seq_output_name}}
+            Seq In: {{selected_midi_seq_input_name}}
+            Midi is {{midi_available}}
+            <br>
+        </div>
+
+    </div>
+</template>

@@ -1,0 +1,91 @@
+<template name="edit_proto_preset">
+    <h3>{{synth.name}}</h3>
+    {{>midi}}
+
+    {{#each view_panels}}
+        {{> view_panel}}
+    {{/each}}
+</template>
+
+<template name="view_panel">
+    <div id="{{_id}}" class="panel panel-primary">
+        <div class="panel-heading">
+            <button
+                    class="btn btn-default"
+                    type="button"
+                    data-toggle="collapse"
+                    data-target="#{{_id}}_body">
+                <span class="glyphicon glyphicon-resize-vertical"></span>
+            </button>
+            {{name}}
+        </div>
+        <div id="{{_id}}_body" class="panel_body collapse">
+        {{#each view_controls}}
+            <div class="control_box">
+                {{> panel_control}}
+            </div>
+        {{/each}}
+        </div>
+    </div>
+</template>
+
+<template name="panel_control">
+    {{#if is_sysex_continuous}}
+        <div class="knob_container">
+            <input
+                    id="{{_id}}"
+                    type="text"
+                    class="knob"
+                    title="{{name}}"
+                    value="{{default_value}}"
+                    data-param-num="{{parameter_number}}"
+                    data-width="75"
+                    data-height="75"
+                    data-fgColor="#66CC66"
+                    data-angleOffset="-135"
+                    data-angleArc="270"
+                    data-thickness="0.5"
+                    data-skin="tron"
+                    data-min="{{min_value}}"
+                    data-max="{{max_value}}"
+                    data-current-value="{{current_value}}"/>
+        </div>
+        <div class="knob_label_container">
+            {{name}}
+        </div>
+    {{/if}}
+    {{#if is_sysex_menu}}
+        <div class="menu_label_container">
+            {{name}}
+        </div>
+        <div class="menu_container">
+
+            <select
+                    class="sysex_menu_selector form-control"
+                    id="{{_id}}"
+                    title="{{name}}"
+                    data-param-num="{{parameter_number}}"
+                    data-default-value="{{default_value}}"
+                    >
+                {{#each name_value_store}}
+                    <option {{selected}} value="{{value}}">{{name}}</option>
+                {{/each}}
+            </select>
+        </div>
+    {{/if}}
+    {{#if is_sysex_toggle}}
+        <div class="menu_label_container">
+            {{name}}
+        </div>
+        <div class="menu_container">
+            <input  id="{{_id}}"
+                    type="checkbox"
+                    class="form-control checkbox"
+                    title="{{name}}"
+                    data-param-num="{{parameter_number}}"
+                    data-true-value="{{true_value}}"
+                    data-false-value="{{false_value}}">
+        </div>
+    {{/if}}
+    {{invokeAfterLoad}}
+</template>

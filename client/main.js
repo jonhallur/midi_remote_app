@@ -1,5 +1,7 @@
-import '../imports/ui/body.js';
+import '/imports/startup/client';
+import { Alerts } from 'meteor/mrt:bootstrap-alerts';
 
+Alerts.defaultOptions.autoHide = 3000;
 /*
 import * as SysEx from './../../imports/lib/midi_parameter.js';
 

@@ -1,0 +1,25 @@
+<template name="landing_page">
+    <ul>
+        <li>
+            {{#linkTo 'create.prototype'}}Create Prototype{{/linkTo}}
+        </li>
+        <li>
+            {{#linkTo 'create.manufacturer'}}Create Manufacturer{{/linkTo}}
+        </li>
+        <li>
+            {{#linkTo 'create.sysexheader'}}Create SysEx Header Info{{/linkTo}}
+        </li>
+
+    </ul>
+
+    <ul>
+        <li>Manufacturers: {{db_stats.num_manufact}}</li>
+        <li>SysExHeaders: {{db_stats.num_sysex_head}}</li>
+        <li>SynthProtos: {{db_stats.num_protos}}</li>
+        <li>SynthPanels: {{db_stats.num_panels}}</li>
+        <li>MidiParams: {{db_stats.num_params}}</li>
+        <li>SysExContinuous: {{db_stats.num_sysex_cont}}</li>
+        <li>SysExMenu: {{db_stats.num_sysex_menu}}</li>
+        <li>SysExToggle: {{db_stats.num_sysex_togg}}</li>
+    </ul>
+</template>

@@ -1,0 +1,29 @@
+<body>
+</body>
+
+<template name="app_body">
+    <nav class="navbar navbar-inverse">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="/">Synths Remotes</a>
+                <ul class="nav navbar-nav navbar-right">
+                    <li>
+                        {{#linkTo 'list.prototypes'}}Prototypes{{/linkTo}}
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <div class="container-fluid">
+        <main>
+            {{> bootstrapAlerts}}
+            {{> Template.dynamic template=main}}
+        </main>
+    </div>
+</template>

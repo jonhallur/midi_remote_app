@@ -17,9 +17,15 @@ ecmascript              # Enable ECMAScript2015+ syntax in app code
 
 insecure                # Allow all DB writes from clients (for prototyping)
 francocatena:status
-twbs:bootstrap
 standard-minifier-css
 standard-minifier-js
 practicalmeteor:mocha
 practicalmeteor:chai
 autopublish
+kadira:flow-router
+kadira:blaze-layout
+aldeed:simple-schema
+mrt:bootstrap-alerts
+arillo:flow-router-helpers
+twbs:bootstrap
+jameslefrere:autoform-jquery-knob

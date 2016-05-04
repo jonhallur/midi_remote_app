@@ -1,0 +1,18 @@
+<template name="list_controller_panels">
+    <h3>Panels</h3>
+    <ul>
+        {{# each controller_panels}}
+            {{> controller_panel}}
+        {{/ each}}
+    </ul>
+</template>
+
+<template name="controller_panel">
+    <li id="{{this}}">
+        <a href="#" class="edit_panel"><span class="glyphicon glyphicon-edit" aria-hidden="true"></span></a>
+        <a href="#" class="delete_panel"><span class="glyphicon glyphicon-remove-circle" aria-hidden="true"></span></a>
+        <a href="#" class="move_panel_up"><span class="glyphicon glyphicon-arrow-up" aria-hidden="true"></span></a>
+        <a href="#" class="move_panel_down"><span class="glyphicon glyphicon-arrow-down" aria-hidden="true"></span></a>
+        {{panel_name}} - {{num_items}}
+    </li>
+</template>

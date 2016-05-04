@@ -1,0 +1,9 @@
+<template name="edit_synth_layout">
+    <h3>Add Panels to {{synth.name}}</h3>
+    <div class="form-group">
+        <form class="new_midi_panel">
+            <input class="form-control" type="text" id="panel_name" placeholder="New Panel name" />
+        </form>
+    </div>
+    {{> list_controller_panels}}
+</template>
