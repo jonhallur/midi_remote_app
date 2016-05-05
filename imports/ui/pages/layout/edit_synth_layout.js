@@ -4,7 +4,6 @@
 import './edit_synth_layout.html';
 import { SynthPrototypes, SynthPanels, MidiParameters } from './../../../api/collections.js';
 import { FlowRouter } from 'meteor/kadira:flow-router';
-import { MidiPanel } from './../../../api/midi/control_collection.js'
 import {find_index_by_id, swap_by_index, remove_all_from_panel} from './layout_helpers.js'
 
 Template.edit_synth_layout.helpers({
